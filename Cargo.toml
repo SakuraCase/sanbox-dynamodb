@@ -12,6 +12,10 @@ serde_dynamo = { version = "4", features = ["aws-sdk-dynamodb+1"] }
 tokio = { version = "1", features = ["full"] }
 
 [[bin]]
+name = "init"
+path = "src/init.rs"
+
+[[bin]]
 name = "put"
 path = "src/put.rs"
 

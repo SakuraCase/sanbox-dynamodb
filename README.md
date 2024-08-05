@@ -1,8 +1,8 @@
-
 ```sh
-docker compose up -d
+mkdir volume
+chmod 777 volume
 ```
 
 ```sh
-npm install && cdklocal bootstrap aws://000000000000/us-east-1 && cdklocal deploy
+docker compose up -d
 ```

@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use aws_sdk_dynamodb::types::AttributeValue;
 mod utils;
 
@@ -6,12 +8,17 @@ async fn main() {
     let client = utils::get_client().await;
     let table_name = utils::get_table_name();
 
-    let id = "1";
+    let pk = "put".to_string();
+    let sk = "1".to_string();
+
+    let mut key = HashMap::new();
+    key.insert("pk".to_string(), AttributeValue::S(pk));
+    key.insert("sk".to_string(), AttributeValue::S(sk));
 
     let resp = client
         .get_item()
         .table_name(table_name)
-        .key("id", AttributeValue::S(id.to_string()))
+        .set_key(Some(key))
         .send()
         .await
         .unwrap();
@@ -22,6 +29,6 @@ async fn main() {
             println!("  {}: {:?}", key, value);
         }
     } else {
-        println!("No item found with id: {}", id);
+        println!("No item found");
     }
 }

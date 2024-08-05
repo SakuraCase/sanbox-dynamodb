@@ -9,6 +9,7 @@ pub fn get_table_name() -> String {
 pub async fn get_client() -> Client {
     let region_provider = RegionProviderChain::default_provider().or_else("us-east-1");
     let config = aws_config::defaults(aws_config::BehaviorVersion::latest())
+        .endpoint_url("http://localhost:8000")
         .region(region_provider)
         .load()
         .await;
