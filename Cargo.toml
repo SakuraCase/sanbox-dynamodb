@@ -20,5 +20,13 @@ name = "put"
 path = "src/put.rs"
 
 [[bin]]
+name = "put_not_exists"
+path = "src/put_not_exists.rs"
+
+[[bin]]
+name = "put_not_equals"
+path = "src/put_not_equals.rs"
+
+[[bin]]
 name = "get"
 path = "src/get.rs"
