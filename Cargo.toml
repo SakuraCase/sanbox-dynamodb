@@ -30,3 +30,7 @@ path = "src/put_not_equals.rs"
 [[bin]]
 name = "get"
 path = "src/get.rs"
+
+[[bin]]
+name = "batch_get"
+path = "src/batch_get.rs"
