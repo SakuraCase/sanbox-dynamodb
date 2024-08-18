@@ -34,3 +34,12 @@ path = "src/get.rs"
 [[bin]]
 name = "batch_get"
 path = "src/batch_get.rs"
+
+[[bin]]
+name = "transact_write"
+path = "src/transact_write.rs"
+
+[[bin]]
+name = "query"
+path = "src/query.rs"
+
